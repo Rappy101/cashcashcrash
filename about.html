@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Crash</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="gold1.ico">
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+</head>
+
+<body style="overflow-y: scroll; overflow-x: hidden;" >
+    <header>
+        <a href="" class="logo">Cash Crash <img src="gold1.ico" alt="Icon" class="navbar-icon" width="30" height="30"> </a>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Game Info</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="hot.html">Hot Deals</a></li>
+            <li><a href="about.html">about us</a></li>
+        </ul>
+
+
+  <div class="toggleMenu"></div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <img src="ralph.png" alt="Person" class="card__image">
+            <p class="card__name">Ralph Lorence D. Arriola</p>
+            <p class="card__position">Lead Programmer</p>
+            <div class="grid-container">
+                <!-- Card details -->
+            </div>
+            <a href="https://www.facebook.com/Boohysteria" class="btn draw-border">Follow me on Facebook</a>
+        </div>
+        <!-- Description container -->
+        <div class="description-container">
+            <p class="description">
+                Hi, my name is Ralph, or you can call me 'Rappy'. I love to draw things that comes to my mind. I wonder how things would go if I fought the tides of life!.
+            </p>
+        </div>
+    </div>
+
+    
+
+    <div class="container">
+        
+        <div class="description-container">
+            <p class="description">
+             In this life knowledge is my best weapon, I am Charles Ivan. Little by Little I would follow my path through success!, I also love going to the gym and also I love traveling with my friends.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="lucas.jpg" alt="Person" class="card__image">
+            <p class="card__name">Charles Ivan C. Lucas </p>
+            <p class="card__position">Co-Programmer</p>
+            <div class="grid-container">
+                <!-- Card details -->
+            </div>
+            <a href="https://www.facebook.com/profile.php?id=100071528636046" class="btn draw-border">Follow me on Facebook</a>
+            
+        </div>
+        <!-- Description container -->
+        
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <img src="maricel.jpg" alt="Person" class="card__image">
+            <p class="card__name">Maricel Cruz</p>
+            <p class="card__position">Researcher</p>
+            <div class="grid-container">
+                <!-- Card details -->
+            </div>
+            <a href="https://www.facebook.com/maricel.cruz.3344" class="btn draw-border">Follow me on Facebook</a>
+            
+        </div>
+        <!-- Description container -->
+        <div class="description-container">
+            <p class="description">
+                I am a goal-oriented researcher, dedicated in  finding valuable information to make our website better. I communicate effectively and enjoy working with others. I stay updated with the latest trends to provide users an excellent website experience.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <div class="description-container">
+            <p class="description">
+                Aldrin is a person who likes to ligthen the team's mood. A person who is cheerful and kind. He likes to play computer games since he was a child. He is sure to help his friends whenever they are in need.  Aside from playing computer games, he also knows how to play a guitar. He spends his free time either playing games or playing music.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="aldrin.png" alt="Person" class="card__image">
+            <p class="card__name">Aldrin S. Banawan</p>
+            <p class="card__position">Assistant Researcher</p>
+            <div class="grid-container">
+                <!-- Card details -->
+            </div>
+            <a href="https://www.facebook.com/aldrinpaul.banawan" class="btn draw-border">Follow me on Facebook</a>
+            
+        </div>
+        <!-- Description container -->
+        
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <img src="bryan.png" alt="Person" class="card__image">
+            <p class="card__name">Bryan Delacruz</p>
+            <p class="card__position">Documentation</p>
+            <div class="grid-container">
+                <!-- Card details -->
+            </div>
+            <a href="https://www.facebook.com/Lilyan999.delacruz" class="btn draw-border">Follow me on Facebook</a>
+            
+        </div>
+        <!-- Description container -->
+        <div class="description-container">
+            <p class="description">
+                I am a person who is passionate about learning and helping others. I enjoy engaging with diverse communities and sharing valuable information. My goal is to make complex topics easy to understand and promote a positive atmosphere in all interactions.
+            </p>
+        </div>
+    </div>
+    
+    
+
+
+  
+
+</div>
+
+<script>
+    window.addEventListener('scroll',function(){
+        var header = document.querySelector('header');
+        header.classList.toggle('sticky',window.scrollY > 0);
+    });
+</script>
+
+
+<script>
+    ScrollReveal({
+
+        reset: true,
+        distance: '60px',
+        duration: 2500,
+        delay: 200
+    });
+
+    ScrollReveal().reveal('.card',{delay: 100});
+    ScrollReveal().reveal('.description-container',{delay: 100});
+</script>
+
+<script>
+    function scrollToSection(sectionId) {
+    document.querySelector(sectionId).scrollIntoView({
+        behavior: 'smooth'
+    });
+}
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>

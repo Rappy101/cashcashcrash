@@ -1,0 +1,34 @@
+body {
+  display: sticky;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.image-container {
+  position: relative; /* or use "absolute" depending on your layout */
+  width: 40px; /* the image size */
+  height: 40px; /* the image size */
+  overflow: hidden;
+}
+
+.stylimg {
+  --f: 0.1; /* the parallax factor (the smaller the better) */
+  --r: 10px; /* radius */
+  --_f: calc(100% * var(--f) / (1 + var(--f)));
+  --_a: calc(100deg * var(--f));
+  width: 10%; /* the image size */
+  height: 10%; /* the image size */
+  aspect-ratio: calc(1 + var(--f));
+  object-fit: cover;
+  clip-path: inset(0 var(--_f) 0 0 round var(--r));
+  transform: perspective(400px) var(--_t, rotateY(var(--_a)));
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.stylimg:hover {
+  clip-path: inset(0 0 0 var(--_f) round var(--r));
+  --_t: translateX(calc(-1 * var(--_f))) rotateY(calc(-1 * var(--_a)));
+}

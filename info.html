@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Crash</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="inf.css">
+    <link rel="stylesheet" href="customshop.css">
+    <link rel="icon" href="gold1.ico">
+
+
+</head>
+
+<body style="overflow-y: scroll; overflow-x: hidden;">
+    <header>
+        <a href="" class="logo">Cash Crash <img src="gold1.ico" alt="Icon" class="navbar-icon" width="30" height="30"> </a>
+        <ul class="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="info.html">Game Info</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="hot.html">Hot Deals</a></li>
+            <li><a href="about.html">About us</a></li>
+        </ul>
+        
+
+        <div class="toggleMenu"></div>
+    </header>
+
+
+    <!-----GAME ----->
+
+    
+
+
+
+    <div class="games">
+
+        
+        
+
+
+        <ul>
+            <li class="list active" data-filter="all">All</li>
+            <li class="list" data-filter="pc">PC Games</li>
+            <li class="list" data-filter="mobile">Mobile Games</li>
+            <div class="action">
+                <div class="searchBx">
+                    <a href=""><i class="bx bx-search"></i></a>
+                    <input type="text" placeholder="Search Games">
+                </div>
+            </div>
+
+
+        </ul>
+        <div class="cardBox">
+            <div class="card" data-item="pc">
+                <img src="valo.jpg" alt="">
+
+                <div class="cont">
+                    <h4>Valorant</h4>
+                    <h4>FPS game by Riot Games</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game1">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="pc">
+                <img src="lol.jpg" alt="">
+
+                <div class="cont">
+                    <h4>League of Legends</h4>
+                    <h4>Moba by Riot Games</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game2">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="mobile">
+                <img src="mlbb.jpg" alt="">
+
+                <div class="cont">
+                    <h4>Mobile Legends Bang Bang</h4>
+                    <h4>moba game by Moonton</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game3">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="pc">
+                <img src="genshin.jpg" alt="">
+
+                <div class="cont">
+                    <h4>Genshin Impact</h4>
+                    <h4>Adventure game by Hoyoverse</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game4">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="mobile">
+                <img src="cod.jpg" alt="">
+
+                <div class="cont">
+                    <h4>Call of Duty</h4>
+                    <h4>FPS game by Garena</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game5">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" data-item="pc">
+                <img src="fort.jpg" alt="">
+
+                <div class="cont">
+                    <h4>Fortnite</h4>
+                    <h4>Building/Shooting game by Epic Games</h4>
+
+                    <div class="inf">
+                        <a href="infovalorant.html#game6">Game Info</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+    </div>
+
+    
+
+    <script>
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+
+
+<script>
+
+
+        
+</script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        let list = document.querySelectorAll('.list');
+        let card = document.querySelectorAll('.card');
+        let searchInput = document.querySelector('.searchBx input');
+        let cardBx = document.querySelector('.cardBox');
+
+     
+        let noResultMessage = document.createElement('h4');
+        noResultMessage.innerText = 'No Result Found';
+        noResultMessage.classList.add('no-result-message');
+      
+        noResultMessage.style.color = '#fff';
+
+        for (let i = 0; i < list.length; i++) {
+            list[i].addEventListener('click', function () {
+               
+                for (let j = 0; j < list.length; j++) {
+                    list[j].classList.remove('active');
+                }
+
+                this.classList.add('active');
+
+                let dataFilter = this.getAttribute('data-filter');
+                filterCards(dataFilter);
+            })
+        }
+
+        
+        searchInput.addEventListener('input', function () {
+            let searchTerm = this.value.toLowerCase();
+            filterCardsBySearch(searchTerm);
+        });
+
+        function filterCards(filter) {
+            let noResults = true;
+            for (let k = 0; k < card.length; k++) {
+                card[k].classList.remove('active');
+                card[k].classList.add('hide');
+
+                if (card[k].getAttribute('data-item') == filter || filter == 'all') {
+                    card[k].classList.remove('hide');
+                    card[k].classList.add('active');
+                    noResults = false;
+                }
+            }
+            checkNoResult(noResults);
+        }
+
+        function filterCardsBySearch(searchTerm) {
+            let noResults = true;
+            for (let k = 0; k < card.length; k++) {
+                let cardText = card[k].querySelector('h4').innerText.toLowerCase();
+                if (cardText.includes(searchTerm)) {
+                    card[k].classList.remove('hide');
+                    card[k].classList.add('active');
+                    noResults = false;
+                } else {
+                    card[k].classList.add('hide');
+                    card[k].classList.remove('active');
+                }
+            }
+            checkNoResult(noResults);
+        }
+
+        function checkNoResult(noResults) {
+            if (noResults) {
+                cardBx.appendChild(noResultMessage); // Append noResultMessage only when there are no results
+            } else {
+                if (noResultMessage.parentNode === cardBx) {
+                    cardBx.removeChild(noResultMessage); // Remove noResultMessage
+                }
+            }
+        }
+    });
+</script>
+
+
+
+
+
+
+
+</body>
+
+</html>
